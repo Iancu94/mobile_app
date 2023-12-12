@@ -53,6 +53,7 @@ const endpointSecret = "whsec_ZXWYNdxBGF8uxPcbzTZrqoUKZbIHGe4Q";
 
 
 app.post('/webhook', express.raw({ type: 'application/json' }), (request, response) => {
+  console.log(request.body);
   const sig = request.headers['stripe-signature'];
 
   let event;
